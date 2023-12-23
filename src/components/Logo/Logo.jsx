@@ -1,10 +1,22 @@
 import React from "react";
-import styles from "./Logo.module.css";
+// import styles from "./Logo.module.css";
 import logo from "../../assets/WebsiteLogo.svg";
 const Logo = () => {
   return (
-    <div className={styles.wrapper}>
-      <img src={logo} alt="qtify_logo" width={67} />
+    <div
+      style={{
+        width: "67px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <img
+        src={logo}
+        alt="qtify_logo"
+        width={67}
+        style={{ cursor: "pointer" }}
+      />
     </div>
   );
 };
