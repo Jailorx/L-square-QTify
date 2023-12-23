@@ -3,14 +3,7 @@ import React from "react";
 import logo from "../../assets/WebsiteLogo.svg";
 const Logo = () => {
   return (
-    <div
-      style={{
-        width: "67px",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
+    <div>
       <img
         src={logo}
         alt="qtify_logo"
