@@ -1,17 +1,17 @@
 import React from "react";
-
-import styles from "./Navbar.module.css";
-import Button from "../Button/Button";
 import Logo from "../Logo/Logo";
-import SearchBar from "../SearchBar/SearchBar";
-const Navbar = () => {
+import Search from "../Search/Search";
+import Button from "../Button/Button";
+import styles from "../Navbar/Navbar.module.css";
+
+export default function Navbar() {
   return (
     <nav className={styles.navbar}>
+      {/* <Link to={"/"}> */}
       <Logo />
-      <SearchBar text="Search a album of your choice" />
-      <Button text="Give Feedback" />
+      {/* </Link> */}
+      <Search placeholder="Search a album of your choice" />
+      <Button>Give Feedback</Button>
     </nav>
   );
-};
-
-export default Navbar;
+}

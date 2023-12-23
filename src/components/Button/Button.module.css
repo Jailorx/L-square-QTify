@@ -1,16 +1,10 @@
-.feedback {
-  color: var(--color-primary);
+.button {
+  color: var(--primary-color);
   background-color: var(--color-black);
-  border: 1px solid var(--color-black);
   border-radius: 12px;
+  border: 1px;
   padding: 10px 16px;
-  cursor: pointer;
-
   width: 170px;
   height: 47px;
-
-  font-weight: 600;
-  font-size: 17px;
-  text-align: center;
-  margin-right: 25px;
+  cursor: pointer;
 }

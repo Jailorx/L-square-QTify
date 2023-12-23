@@ -1,17 +1,8 @@
 import React from "react";
+import WebsiteLogo from "../../assets/logo.png";
 
-import logo from "../../assets/logo.png";
-const Logo = () => {
-  return (
-    <div>
-      <img
-        src={logo}
-        alt="qtify_logo"
-        width={67}
-        style={{ cursor: "pointer" }}
-      />
-    </div>
-  );
-};
+function Logo() {
+  return <img src={WebsiteLogo} alt="logo" width={67} />;
+}
 
 export default Logo;

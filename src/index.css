@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-
 :root {
-  --color-primary: #34c94b;
-  --color-black: #121212;
   --color-white: #ffffff;
+  --primary-color: #34c94b;
+  --color-black: #121212;
 }
+
 *,
 *::before,
 *::after {
@@ -12,7 +12,6 @@
 }
 * {
   margin: 0;
-  font-family: "Poppins", sans-serif;
 }
 html,
 body {
@@ -20,7 +19,36 @@ body {
 }
 body {
   line-height: 1.5;
-  background-color: #121212;
-  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--black-color);
+  color: var(--color-white);
   overflow-x: hidden;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+#root,
+#__next {
+  isolation: isolate;
 }
