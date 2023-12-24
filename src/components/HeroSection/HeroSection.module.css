@@ -1,0 +1,17 @@
+.container {
+  width: 100%;
+  height: 16.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 2rem;
+}
+.heroImage {
+  width: 13.25rem;
+}
