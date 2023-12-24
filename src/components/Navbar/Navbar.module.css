@@ -7,3 +7,8 @@
   align-items: center;
   justify-content: space-between;
 }
+.logoContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
