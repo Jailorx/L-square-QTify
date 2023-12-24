@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.header p {
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.toggleText {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.cardWrapper {
+  margin-top: 1.125rem;
+}
+
+.wrapper {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}

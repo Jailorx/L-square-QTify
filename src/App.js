@@ -1,12 +1,38 @@
 import "./App.css";
-import HeroSection from "./components/HeroSection/HeroSection";
+import { useState, useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
+import { Outlet } from "react-router-dom";
+import {
+  fetchTopAlbums,
+  fetchNewAlbums,
+  fetchSongs,
+} from "../src/components/api/api";
 
 function App() {
+  const [data, setData] = useState({});
+
+  const generateData = (key, source) => {
+    source().then((data) => {
+      setData((prevData) => {
+        return { ...prevData, [key]: data };
+      });
+    });
+  };
+
+  useEffect(() => {
+    generateData("topAlbums", fetchTopAlbums);
+    generateData("newAlbums", fetchNewAlbums);
+    generateData("songs", fetchSongs);
+  }, []);
+
+  const { topAlbums = [], newAlbums = [], songs = [] } = data;
+
   return (
     <div className="App">
       <Navbar />
-      <HeroSection />
+      <Outlet context={{ data: { topAlbums, newAlbums, songs } }} />
+      {/* <HeroSection />
+      <Section /> */}
     </div>
   );
 }
