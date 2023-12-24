@@ -7,9 +7,7 @@ import styles from "../Navbar/Navbar.module.css";
 export default function Navbar() {
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logoContainer}>
         <Logo />
-      </div>
       <Search placeholder="Search a album of your choice" />
       <Button>Give Feedback</Button>
     </nav>
