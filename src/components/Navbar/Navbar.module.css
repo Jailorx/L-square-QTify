@@ -1,17 +1,10 @@
 .navbar {
-  background-color: var(--primary-color);
-  width: 100vw;
+  align-items: center;
+  background-color: var(--color-primary);
+  display: flex;
   height: 74px;
-  padding: 0px 32px;
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-}
-.logoContainer {
-  display: flex;
-  align-items: center;
-  margin-right: 10px;
-}
-.logoContainer img {
-  max-height: 100%;
+  padding: 0.62rem 1rem;
+  position: relative;
+  width: 100%;
 }

@@ -7,12 +7,14 @@ function Search({ placeholder }) {
     e.preventDefault();
   };
   return (
-    <form className={styles.wrapper} onSubmit={onSubmit}>
-      <input className={styles.search} placeholder={placeholder} required />
-      <button className={styles.searchButton} type="submit">
-        <SearchIcon />
-      </button>
-    </form>
+    <div className={styles.container}>
+      <form className={styles.wrapper} onSubmit={onSubmit}>
+        <input className={styles.search} placeholder={placeholder} required />
+        <button className={styles.searchButton} type="submit">
+          <SearchIcon />
+        </button>
+      </form>
+    </div>
   );
 }
 
