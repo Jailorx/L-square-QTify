@@ -35,7 +35,7 @@ function Carousal({ data, renderComponent }) {
         <CarousalLeftNavigation />
         <CarousalRightNavigation />
         {data.map((ele) => (
-          <SwiperSlide>{renderComponent(ele)}</SwiperSlide>
+          <SwiperSlide key={ele.id}>{renderComponent(ele)}</SwiperSlide>
         ))}
       </Swiper>
     </div>

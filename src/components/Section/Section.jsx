@@ -1,15 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "../Card/Card";
 import styles from "./Section.module.css";
 import { CircularProgress } from "@mui/material";
 import Carousal from "../Carousal/Carousal";
+import Filters from "../Filters/Filters";
 
-const Section = ({ title, data, type }) => {
-  const [carouselToggle, setCarouselToggle] = useState();
+const Section = ({ title, data, filterSource, type }) => {
+  const [filters, setFilters] = useState([{ key: "all", label: "All" }]);
+  const [selectedFilterIndex, setSelectedFilterIndex] = useState(0);
+  const [carouselToggle, setCarouselToggle] = useState(false);
 
   const handleToggle = () => {
     setCarouselToggle((prev) => !prev);
   };
+
+  useEffect(() => {
+    if (filterSource) {
+      filterSource().then((res) => {
+        const { data } = res;
+        setFilters([...filters, ...data]);
+      });
+    }
+  }, []);
+
+  const showFilters = filters.length > 1;
+  const cardsToRender = data.filter((card) =>
+    showFilters && selectedFilterIndex !== 0
+      ? card.genre.key === filters[selectedFilterIndex].key
+      : card
+  );
+
   return (
     <div>
       <div className={styles.header}>
@@ -18,22 +38,31 @@ const Section = ({ title, data, type }) => {
           {carouselToggle ? "Collapse" : "Show all"}
         </p>
       </div>
+      {showFilters && (
+        <div className={styles.filterWrapper}>
+          <Filters
+            filters={filters}
+            selectedFilterIndex={selectedFilterIndex}
+            setSelectedFilterIndex={setSelectedFilterIndex}
+          />
+        </div>
+      )}
       {data.length === 0 ? (
-        <CircularProgress />
+        <CircularProgress
+          sx={{ color: (theme) => theme.palette.primary.main }}
+        />
       ) : (
         <div className={styles.cardWrapper}>
           {carouselToggle ? (
             <div className={styles.wrapper}>
-              {data.map((ele) => (
-                <Card data={ele} type={type} />
+              {cardsToRender.map((ele) => (
+                <Card key={ele.id} data={ele} type={type} />
               ))}
             </div>
           ) : (
             <Carousal
-              data={data}
-              renderComponent={(data) => (
-                <Card data={data} type={type} key={data.id} />
-              )}
+              data={cardsToRender}
+              renderComponent={(data) => <Card data={data} type={type} />}
             />
           )}
         </div>
