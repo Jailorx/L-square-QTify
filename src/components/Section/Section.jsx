@@ -22,7 +22,7 @@ const Section = ({ title, data, type }) => {
         <CircularProgress />
       ) : (
         <div className={styles.cardWrapper}>
-          {!carouselToggle ? (
+          {carouselToggle ? (
             <div className={styles.wrapper}>
               {data.map((ele) => (
                 <Card data={ele} type={type} />
