@@ -36,3 +36,13 @@ export const fetchFilters = async () => {
     console.error(err);
   }
 };
+
+export const fetchFaq = async () => {
+  try {
+    const res = await axios.get(`${BACK_ENDPOINT}/faq`);
+    // console.log("faq.fetch:", res.data);
+    return res.data;
+  } catch (err) {
+    console.error(err);
+  }
+};

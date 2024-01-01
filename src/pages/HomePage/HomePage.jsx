@@ -4,10 +4,12 @@ import { useOutletContext } from "react-router-dom";
 import HeroSection from "../../components/HeroSection/HeroSection";
 import Section from "../../components/Section/Section";
 import { fetchFilters } from "../../components/api/api";
+import Faq from "../../components/Faq/Faq";
 
 const HomePage = () => {
   const { data } = useOutletContext();
-  const { topAlbums, newAlbums, songs } = data;
+  const { topAlbums, newAlbums, songs, faq } = data;
+  // console.log("faq", faq);
   return (
     <>
       <HeroSection />
@@ -21,6 +23,7 @@ const HomePage = () => {
           type="song"
         />
       </div>
+      <Faq title="FAQs" data={faq} />
     </>
   );
 };

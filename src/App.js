@@ -6,6 +6,7 @@ import {
   fetchTopAlbums,
   fetchNewAlbums,
   fetchSongs,
+  fetchFaq,
 } from "../src/components/api/api";
 
 function App() {
@@ -23,16 +24,16 @@ function App() {
     generateData("topAlbums", fetchTopAlbums);
     generateData("newAlbums", fetchNewAlbums);
     generateData("songs", fetchSongs);
+    generateData("faq", fetchFaq);
   }, []);
 
-  const { topAlbums = [], newAlbums = [], songs = [] } = data;
+  const { topAlbums = [], newAlbums = [], songs = [], faq = [] } = data;
+  // console.log("data:", data);
 
   return (
     <div className="App">
       <Navbar />
-      <Outlet context={{ data: { topAlbums, newAlbums, songs } }} />
-      {/* <HeroSection />
-      <Section /> */}
+      <Outlet context={{ data: { topAlbums, newAlbums, songs, faq } }} />
     </div>
   );
 }
