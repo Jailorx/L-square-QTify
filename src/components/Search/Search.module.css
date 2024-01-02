@@ -30,3 +30,17 @@
   align-items: center;
   justify-content: center;
 }
+
+.searchResultWrapper {
+  position: absolute;
+  top: 4.65rem;
+  left: 20.875rem;
+  z-index: 10;
+  background-color: var(--color-black);
+  border: 1px solid var(--color-primary);
+  border-radius: 0 0 0.625rem 0.625rem;
+  width: 48rem;
+  max-height: 28.5rem;
+  overflow-y: hidden;
+  padding: 1rem;
+}

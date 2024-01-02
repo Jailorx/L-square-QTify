@@ -32,7 +32,6 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar />
       <Outlet context={{ data: { topAlbums, newAlbums, songs, faq } }} />
     </div>
   );

@@ -5,13 +5,17 @@ import HeroSection from "../../components/HeroSection/HeroSection";
 import Section from "../../components/Section/Section";
 import { fetchFilters } from "../../components/api/api";
 import Faq from "../../components/Faq/Faq";
+import Navbar from "../../components/Navbar/Navbar";
 
 const HomePage = () => {
   const { data } = useOutletContext();
   const { topAlbums, newAlbums, songs, faq } = data;
   // console.log("faq", faq);
+  const searchData = [...topAlbums, ...newAlbums];
+  console.log("searchData:", searchData);
   return (
     <>
+      <Navbar data={searchData} />
       <HeroSection />
       <div className={styles.wrapper}>
         <Section title="Top Albums" data={topAlbums} type="album" />

@@ -1,0 +1,31 @@
+.wrapper {
+  max-width: 45.5rem;
+  max-height: 4.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-item: center;
+  padding: 0.5rem;
+  border-radius: 0.625rem;
+}
+
+.wrapper:hover {
+  background-color: var(--color-primary);
+}
+
+.info {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.info img {
+  width: 4.125rem;
+}
+
+.about {
+  font-weight: 400;
+}
+
+.albumArtists {
+  font-size: 0.75rem;
+}
